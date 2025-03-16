@@ -7,9 +7,11 @@ const searchForm = document.querySelector("[data-searchForm]");
 const loadingScreen = document.querySelector(".loading-container");
 const userInfoContainer = document.querySelector(".user-info-container");
 
+
 let oldTab = userTab;
 const API_KEY = "229297cca3046d5419602ff3756e27e7";
 oldTab.classList.add("current-tab");
+getfromSessionStorage();
 
 function switchTab(newTab){
     if(newTab != oldTab){
@@ -118,9 +120,43 @@ function showPosition(position){
         lat: position.coords.latitude,
         lon: position.coords.longitude,
     }
+    sessionStorage.setItem("user-coordinates",JSON.stringify(userCoordinates));
+    fetchUserWeatherInfo(userCoordinates);
+
 }
 
 const grantAccessButton = document.querySelector("[data-grantAccess]");
 grantAccessButton.addEventListener("click",GetLocation);
+
+const searchInput = document.querySelector("[data-searchInput]")
+searchForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+
+    const cityName = searchInput.value;
+
+    if(cityName==="") return;
+    else{
+        fetchSearchWeatherInfo(cityName);
+    }
+});
+
+async function fetchSearchWeatherInfo(city){
+    loadingScreen.classList.add("active");
+    userInfoContainer.classList.remove("active");
+    grantAccessContainer.classList.remove("active");
+
+    try{
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+        const data = await response.json();
+        loadingScreen.classList.remove("active");
+        userInfoContainer.classList.add("active");
+        renderWeatherInfo(data);
+
+    }
+    catch(err){
+        //hw
+    }
+
+}
 
   
