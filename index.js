@@ -47,7 +47,7 @@ searchTab.addEventListener('click',()=>{
 
 //Check if coordinates are already present in session or not->
 function getfromSessionStorage(){
-    const localCoordinates = sessionStorage.getItem("user-coordinate");
+    const localCoordinates = sessionStorage.getItem("user-coordinates");
     if(!localCoordinates ){
         //agar local coodinate nahi mile
         grantAccessContainer.classList.add("active")
