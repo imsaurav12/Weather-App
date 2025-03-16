@@ -53,7 +53,7 @@ function getfromSessionStorage(){
         grantAccessContainer.classList.add("active")
     }
     else{
-        const coodinates = JSON.parse(localCoordinates);
+        const coordinates = JSON.parse(localCoordinates);
         fetchUserWeatherInfo(coordinates);
     }
 }
