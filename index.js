@@ -96,7 +96,8 @@ function renderWeatherInfo(weatherInfo){
     // optional chaining - Isko use krke JSON object ke ander jakar particular value to access kr skte h-->  ex - user?.address?.zip 
     //weatherInfo JSON file hain jo API se fetch hoga
     cityName.innerText = weatherInfo?.name;
-    cityIcon.src = `https://flagcdn.com/144*108/${weatherInfo?.sys?.country.toLowerCase()}.png`;
+    cityIcon.src = `https://flagcdn.com/w320/${weatherInfo?.sys?.country.toLowerCase()}.png`;
+    
     desc.innerText = weatherInfo?.weather?.[0]?.description;
     weatherIcon.src = `http://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`;
     temp.innerText = weatherInfo?.main?.temp;
