@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +17,7 @@
         </div>
         <div class="weather-container">
             <!-- Grant location container-->
-             <div class="grant-location-container">
+            <div class="sub-container grant-location-container">
                 <img src="./assets/location.png" width="80" height="80" loading="lazy">
                 <p>Grant Location Access</p>
                 <p>Allow Access to get weather information</p>
@@ -28,17 +32,17 @@
               </form>
 
               <!-- Loading Screen Container -->
-               <div class="loading-container">
+               <div class="sub-container loading-container">
                 <img src="./assets/icons8-loading.gif" width="50" height="50">
                 <p>Loading...</p>
                </div>
 
                <!-- Show weather info-->
-                <div class="user-info-container">
+                <div class="sub-container user-info-container">
                     <!-- city name and flag -->
                     <div class="name">
                         <p data-cityName></p>
-                        <img data-countryIcon height="80" width="80">
+                        <img data-countryIcon height="60" width="80">
                     </div>
                     <!-- weather description -->
                     <p data-weatherDesc></p>
@@ -51,7 +55,7 @@
                         <!-- Card 1 -->
                          <div class="parameter">
                             <img src="./assets/icons8-wind-100.png" width="80" height="80">
-                            <p>WindSpeed</p>
+                            <p>Windspeed</p>
                             <p data-windspeed></p>
                          </div>
                          <!-- Card-2 -->
