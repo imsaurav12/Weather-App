@@ -226,7 +226,6 @@ h1 {
     margin-bottom:1px;
 }
 
-/* Fixing inconsistent tab sizes */
 .user-info-container,
 .form-container {
     width: 90%;
@@ -234,14 +233,12 @@ h1 {
     margin: 0 auto;
 }
 
-/* Ensure uniform text size and alignment */
 .user-info-container p,
 .form-container input {
     font-size: 1.5rem;
     text-align: center;
 }
 
-/* Match padding and spacing */
 .user-info-container {
     padding: 20px;
 }
