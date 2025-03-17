@@ -155,9 +155,7 @@ async function fetchSearchWeatherInfo(city){
 
     }
     catch(err){
-        //hw
+        //jis city ka value na mile uske liye
     }
 
 }
-
-  
