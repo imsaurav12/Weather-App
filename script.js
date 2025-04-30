@@ -9,13 +9,11 @@ function renderWeatherInfo(data) {
 
 async function showWeather() {
   try {
-    let city = "goa";
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
     );
 
     const data = await response.json();
-    console.log("Weather -> ", data);
 
     renderWeatherInfo(data);
   } catch (err) {
@@ -23,11 +21,8 @@ async function showWeather() {
   }
 }
 
-async function getCustomWeather() {
+async function getCustomWeather(latitude,longitude) {
   try {
-    let latitude = 24.0667;
-    let longitude = 75.0667;
-
     let result =
       await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}
       `);
@@ -51,7 +46,4 @@ function getLocation() {
 function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-
-  console.log(lat);
-  console.log(long);
 }
