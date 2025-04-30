@@ -7,7 +7,7 @@ function renderWeatherInfo(data) {
   document.body.appendChild(newPara);
 }
 
-async function showWeather() {
+async function showWeather(city) {
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
@@ -46,4 +46,6 @@ function getLocation() {
 function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
+
+  getCustomWeather(lat, long);
 }
